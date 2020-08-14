@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0B243B24E6359300DCA263 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B243A24E6359300DCA263 /* HomeViewModel.swift */; };
 		2E0DB30124E6259100AA5115 /* uApps_SupportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0DB30024E6259100AA5115 /* uApps_SupportApp.swift */; };
 		2E0DB30324E6259100AA5115 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0DB30224E6259100AA5115 /* ContentView.swift */; };
 		2E0DB30524E6259200AA5115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E0DB30424E6259200AA5115 /* Assets.xcassets */; };
@@ -14,6 +15,8 @@
 		2E0DB31324E6259200AA5115 /* uApps_SupportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0DB31224E6259200AA5115 /* uApps_SupportTests.swift */; };
 		2E0DB31E24E6259200AA5115 /* uApps_SupportUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0DB31D24E6259200AA5115 /* uApps_SupportUITests.swift */; };
 		2E0DB32D24E626CF00AA5115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0DB32C24E626CF00AA5115 /* AppDelegate.swift */; };
+		2E0DB33624E6291200AA5115 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0DB33524E6291200AA5115 /* CloudKit.framework */; };
+		2E0DB33724E62E2000AA5115 /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0DB33224E628F500AA5115 /* DatabaseHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E0B243A24E6359300DCA263 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		2E0DB2FD24E6259100AA5115 /* uApps-Support.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "uApps-Support.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E0DB30024E6259100AA5115 /* uApps_SupportApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uApps_SupportApp.swift; sourceTree = "<group>"; };
 		2E0DB30224E6259100AA5115 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 		2E0DB31F24E6259200AA5115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E0DB32B24E625A100AA5115 /* uApps-Support.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "uApps-Support.entitlements"; sourceTree = "<group>"; };
 		2E0DB32C24E626CF00AA5115 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2E0DB33224E628F500AA5115 /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
+		2E0DB33524E6291200AA5115 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E0DB33624E6291200AA5115 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +89,7 @@
 				2E0DB31124E6259200AA5115 /* uApps-SupportTests */,
 				2E0DB31C24E6259200AA5115 /* uApps-SupportUITests */,
 				2E0DB2FE24E6259100AA5115 /* Products */,
+				2E0DB33424E6291200AA5115 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +164,7 @@
 		2E0DB33024E6287000AA5115 /* Handler */ = {
 			isa = PBXGroup;
 			children = (
+				2E0DB33224E628F500AA5115 /* DatabaseHandler.swift */,
 			);
 			path = Handler;
 			sourceTree = "<group>";
@@ -163,8 +172,17 @@
 		2E0DB33124E6287500AA5115 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2E0B243A24E6359300DCA263 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2E0DB33424E6291200AA5115 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E0DB33524E6291200AA5115 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +317,8 @@
 				2E0DB32D24E626CF00AA5115 /* AppDelegate.swift in Sources */,
 				2E0DB30324E6259100AA5115 /* ContentView.swift in Sources */,
 				2E0DB30124E6259100AA5115 /* uApps_SupportApp.swift in Sources */,
+				2E0B243B24E6359300DCA263 /* HomeViewModel.swift in Sources */,
+				2E0DB33724E62E2000AA5115 /* DatabaseHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
