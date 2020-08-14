@@ -98,13 +98,11 @@
 		2E0DB2FF24E6259100AA5115 /* uApps-Support */ = {
 			isa = PBXGroup;
 			children = (
-				2E0DB32B24E625A100AA5115 /* uApps-Support.entitlements */,
-				2E0DB30024E6259100AA5115 /* uApps_SupportApp.swift */,
-				2E0DB30224E6259100AA5115 /* ContentView.swift */,
-				2E0DB30424E6259200AA5115 /* Assets.xcassets */,
-				2E0DB30924E6259200AA5115 /* Info.plist */,
+				2E0DB33124E6287500AA5115 /* ViewModel */,
+				2E0DB33024E6287000AA5115 /* Handler */,
+				2E0DB32F24E6286600AA5115 /* Other */,
+				2E0DB32E24E6285600AA5115 /* SwiftUI */,
 				2E0DB30624E6259200AA5115 /* Preview Content */,
-				2E0DB32C24E626CF00AA5115 /* AppDelegate.swift */,
 			);
 			path = "uApps-Support";
 			sourceTree = "<group>";
@@ -133,6 +131,40 @@
 				2E0DB31F24E6259200AA5115 /* Info.plist */,
 			);
 			path = "uApps-SupportUITests";
+			sourceTree = "<group>";
+		};
+		2E0DB32E24E6285600AA5115 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				2E0DB30024E6259100AA5115 /* uApps_SupportApp.swift */,
+				2E0DB30224E6259100AA5115 /* ContentView.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		2E0DB32F24E6286600AA5115 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				2E0DB32B24E625A100AA5115 /* uApps-Support.entitlements */,
+				2E0DB30924E6259200AA5115 /* Info.plist */,
+				2E0DB30424E6259200AA5115 /* Assets.xcassets */,
+				2E0DB32C24E626CF00AA5115 /* AppDelegate.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		2E0DB33024E6287000AA5115 /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		2E0DB33124E6287500AA5115 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,11 +456,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "uApps-Support/uApps-Support.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"uApps-Support/Preview Content\"";
 				DEVELOPMENT_TEAM = MCRTE5CC2K;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "uApps-Support/Info.plist";
+				INFOPLIST_FILE = "uApps-Support/Other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -448,11 +481,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "uApps-Support/uApps-Support.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"uApps-Support/Preview Content\"";
 				DEVELOPMENT_TEAM = MCRTE5CC2K;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "uApps-Support/Info.plist";
+				INFOPLIST_FILE = "uApps-Support/Other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
