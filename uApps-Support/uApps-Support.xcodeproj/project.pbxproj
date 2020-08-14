@@ -14,8 +14,8 @@
 		2E0DB31324E6259200AA5115 /* uApps_SupportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0DB31224E6259200AA5115 /* uApps_SupportTests.swift */; };
 		2E0DB31E24E6259200AA5115 /* uApps_SupportUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0DB31D24E6259200AA5115 /* uApps_SupportUITests.swift */; };
 		2E0DB32D24E626CF00AA5115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0DB32C24E626CF00AA5115 /* AppDelegate.swift */; };
-		2E0DB33324E628F500AA5115 /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0DB33224E628F500AA5115 /* DatabaseHandler.swift */; };
 		2E0DB33624E6291200AA5115 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0DB33524E6291200AA5115 /* CloudKit.framework */; };
+		2E0DB33724E62E2000AA5115 /* DatabaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0DB33224E628F500AA5115 /* DatabaseHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -314,7 +314,7 @@
 				2E0DB32D24E626CF00AA5115 /* AppDelegate.swift in Sources */,
 				2E0DB30324E6259100AA5115 /* ContentView.swift in Sources */,
 				2E0DB30124E6259100AA5115 /* uApps_SupportApp.swift in Sources */,
-				2E0DB33324E628F500AA5115 /* DatabaseHandler.swift in Sources */,
+				2E0DB33724E62E2000AA5115 /* DatabaseHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
