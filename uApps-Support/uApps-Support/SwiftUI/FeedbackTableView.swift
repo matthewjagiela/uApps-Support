@@ -33,18 +33,22 @@ struct FeedbackCell: View {
     var crash: Bool
     
     var body: some View {
-        VStack {
-            Text(feedbackName).font(.headline)
-            Text("Type: \(feedbackType)")
-            HStack {
-                if crash {
-                    Text("Crash").foregroundColor(.red)
-                    Divider().frame(height: 20)
-                } else { EmptyView() }
-                Text(feedbackVersion)
-            }
-            Divider()
-        }
+        NavigationLink(
+            destination: FeedbackDetailView(crashName: feedbackName),
+            label: {
+                VStack {
+                    Text(feedbackName).font(.headline).foregroundColor(Color(UIColor.label)).padding(.bottom, 10)
+                    Text("Type: \(feedbackType)").foregroundColor(Color(UIColor.label))
+                    HStack {
+                        if crash {
+                            Text("Crash").foregroundColor(.red)
+                            Divider().frame(height: 20)
+                        } else { EmptyView() }
+                        Text(feedbackVersion)
+                    }
+                    Divider()
+                }
+            })
     }
 }
 
