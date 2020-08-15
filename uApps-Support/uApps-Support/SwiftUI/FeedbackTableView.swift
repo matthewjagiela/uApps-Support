@@ -35,7 +35,6 @@ struct FeedbackCell: View {
     var body: some View {
         VStack {
             Text(feedbackName).font(.headline)
-            Divider()
             Text("Type: \(feedbackType)")
             HStack {
                 if crash {
