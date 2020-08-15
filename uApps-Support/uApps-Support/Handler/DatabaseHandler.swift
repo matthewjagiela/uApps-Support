@@ -8,7 +8,7 @@
 import Foundation
 import CloudKit
 
-struct FeedbackData {
+struct FeedbackData: Hashable {
     var bugName: String
     var type: String
     var didCrash: Bool

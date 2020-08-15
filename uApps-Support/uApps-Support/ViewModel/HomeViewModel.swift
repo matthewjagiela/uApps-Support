@@ -7,7 +7,19 @@
 
 import Foundation
 
-public class HomeViewModel {
+public class HomeViewModel: ObservableObject {
     
+    @Published var feedbackData =  [FeedbackData]()
+    let db = DatabaseReader()
+    init() {
+        db.fetchUTimeRecords { (result) in
+            switch result {
+            case .success(let feedback):
+                self.feedbackData = feedback
+            default:
+                print("error")
+            }
+        }
+    }
     
 }
