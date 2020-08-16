@@ -10,7 +10,11 @@ import SwiftUI
 struct FeedbackDetailView: View {
     @State var crashName =  ""
     var body: some View {
-        Text(crashName)
+        NavigationView {
+            ScrollView {
+                Text("World")
+            }
+        }
     }
 }
 
