@@ -40,7 +40,12 @@ public class DatabaseReader {
         let operation = CKQueryOperation(query: query)
         var newFeedback = [FeedbackData]()
         operation.recordFetchedBlock = { record in
-            let feedbackAppend = FeedbackData(bugName: record["name"] as! String, type: record["type"] as! String, didCrash: (record["crash"] != nil), details: record["details"] as! String, emailAddress: record["email"] as! String, version: record["version"] as! String)
+            let feedbackAppend = FeedbackData(bugName: record["name"] as? String ?? "Not Applicable",
+                                              type: record["type"] as? String ?? "Not Applicable",
+                                              didCrash: (record["crash"] != nil),
+                                              details: record["details"] as? String ?? "Not Applicable",
+                                              emailAddress: record["email"] as? String ?? "Not Applicable",
+                                              version: record["version"] as? String ?? "Not Applicable")
             newFeedback.append(feedbackAppend)
         }
         operation.queryCompletionBlock = { (cursor, error) in
