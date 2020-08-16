@@ -12,11 +12,19 @@ struct FeedbackTableView: View {
     var body: some View {
         NavigationView {
             if viewModel.feedbackData.count == 0 {
-                Text("No Data")
+                Text("No Data").navigationTitle("Feedback").padding(.top, 5).navigationBarItems(trailing: Button(action: {
+                    self.viewModel.refreshList()
+                }, label: {
+                    Text("Refresh")
+                }))
             } else {
                 ScrollView {
                     ForEach(self.viewModel.feedbackData, id: \.self) { feedback in
-                        FeedbackCell(feedbackName: feedback.bugName, feedbackType: feedback.type, feedbackVersion: feedback.version, crash: feedback.didCrash).navigationTitle("Feedback").padding(.top, 5)
+                        FeedbackCell(feedbackName: feedback.bugName, feedbackType: feedback.type, feedbackVersion: feedback.version, crash: feedback.didCrash).navigationTitle("Feedback").padding(.top, 5).navigationBarItems(trailing: Button(action: {
+                            self.viewModel.refreshList()
+                        }, label: {
+                            Text("Refresh")
+                        }))
                         Divider()
                     }
                 }.padding(.top, 10)

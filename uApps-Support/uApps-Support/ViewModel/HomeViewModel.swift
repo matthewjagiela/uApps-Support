@@ -22,4 +22,15 @@ public class HomeViewModel: ObservableObject {
         }
     }
     
+    func refreshList() {
+        db.fetchUTimeRecords { result in
+            switch result {
+            case .success(let feedback):
+                self.feedbackData = feedback
+            case .failure(let error):
+                print("Error fetching timers: \(error)")
+            }
+        }
+    }
+    
 }
