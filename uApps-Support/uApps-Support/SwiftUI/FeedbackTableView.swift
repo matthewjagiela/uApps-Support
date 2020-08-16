@@ -20,7 +20,7 @@ struct FeedbackTableView: View {
             } else {
                 ScrollView {
                     ForEach(self.viewModel.feedbackData, id: \.self) { feedback in
-                        FeedbackCell(feedbackName: feedback.bugName, feedbackType: feedback.type, feedbackVersion: feedback.version, crash: feedback.didCrash).navigationTitle("Feedback").padding(.top, 5).navigationBarItems(trailing: Button(action: {
+                        FeedbackCell(feedbackData: feedback).navigationTitle("Feedback").padding(.top, 5).navigationBarItems(trailing: Button(action: {
                             self.viewModel.refreshList()
                         }, label: {
                             Text("Refresh")
@@ -35,24 +35,21 @@ struct FeedbackTableView: View {
 
 
 struct FeedbackCell: View {
-    var feedbackName: String
-    var feedbackType: String
-    var feedbackVersion: String
-    var crash: Bool
+    var feedbackData: FeedbackData
     
     var body: some View {
         NavigationLink(
-            destination: FeedbackDetailView(crashName: feedbackName),
+            destination: FeedbackDetailView(),
             label: {
                 VStack {
-                    Text(feedbackName).font(.headline).foregroundColor(Color(UIColor.label)).padding(.bottom, 10)
-                    Text("Type: \(feedbackType)").foregroundColor(Color(UIColor.label))
+                    Text(feedbackData.bugName).font(.headline).foregroundColor(Color(UIColor.label)).padding(.bottom, 10)
+                    Text("Type: \(feedbackData.type)").foregroundColor(Color(UIColor.label))
                     HStack {
-                        if crash {
+                        if feedbackData.didCrash{
                             Text("Crash").foregroundColor(.red)
                             Divider().frame(height: 20)
                         } else { EmptyView() }
-                        Text(feedbackVersion)
+                        Text(feedbackData.version)
                     }
                     Divider()
                 }
