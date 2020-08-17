@@ -15,6 +15,7 @@ public class FeedbackDetailViewModel: ObservableObject {
     }
     
     func markClosed() {
-        print("Mark Closed")
+        let DBHandler = DatabaseReader()
+        DBHandler.changeRecordStatus(recordID: feedback.recordID, closed: feedback.isOpen)
     }
 }
