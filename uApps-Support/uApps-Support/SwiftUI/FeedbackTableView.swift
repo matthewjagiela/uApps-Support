@@ -51,7 +51,6 @@ struct FeedbackCell: View {
                         } else { EmptyView() }
                         Text(feedbackData.version)
                     }
-                    Divider()
                 }
             })
     }
