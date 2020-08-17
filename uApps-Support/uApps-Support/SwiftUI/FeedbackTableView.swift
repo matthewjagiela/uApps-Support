@@ -51,7 +51,7 @@ struct FeedbackCell: View {
                         } else { EmptyView() }
                         Text(feedbackData.version)
                         Divider()
-                        Text(feedbackData.isOpen ? "Open": "Closed").foregroundColor(Color(UIColor.label))
+                        Text(feedbackData.isOpen ? "Open": "Closed").foregroundColor(feedbackData.isOpen ? .red: .green)
                     }
                 }
             })
