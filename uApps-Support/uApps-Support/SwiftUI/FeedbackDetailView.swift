@@ -14,6 +14,14 @@ struct FeedbackDetailView: View {
             ScrollView {
                 VStack {
                     NameView(feedback: self.viewModel.feedback)
+                    TypeView(feedback: self.viewModel.feedback)
+                    VStack {
+                        HStack {
+                            Text("Bug Or Crash: ").fontWeight(.bold)
+                            Text("Crash")
+                            Spacer()
+                        }
+                    }.padding([.horizontal, .bottom])
                     
                 }
             }
@@ -34,6 +42,19 @@ struct NameView: View {
             Text("Name: ").font(.title).fontWeight(.bold)
             Text(feedback.bugName).font(.title3).padding(.top, 3.5)
             Spacer()
+        }.padding([.horizontal, .bottom])
+    }
+}
+
+struct TypeView: View {
+    var feedback: FeedbackData
+    var body: some View {
+        VStack {
+            HStack {
+                Text("Type: ").font(.title2).fontWeight(.bold)
+                Text(feedback.type).padding(.top, 2.5)
+                Spacer()
+            }
         }.padding([.horizontal, .bottom])
     }
 }
