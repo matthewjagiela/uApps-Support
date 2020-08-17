@@ -21,7 +21,7 @@ struct FeedbackDetailView: View {
                 Button(action: {
                     self.viewModel.markClosed()
                 }) {
-                    Text("Mark Issue As Closed")
+                    Text(viewModel.feedback.isOpen ? "Mark Issue Closed": "Mark Issue Open")
                 }
                 
                 
@@ -32,7 +32,7 @@ struct FeedbackDetailView: View {
 
 struct FeedbackDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedbackDetailView(viewModel: FeedbackDetailViewModel(feedback: FeedbackData(bugName: "Test Name", type: "Interface", didCrash: true, details: "Details Go Here", emailAddress: "matthew.jagiela", version: "5", isOpen: true)))
+        FeedbackDetailView(viewModel: FeedbackDetailViewModel(feedback: FeedbackData(bugName: "Test Name", type: "Interface", didCrash: true, details: "Details Go Here", emailAddress: "matthew.jagiela", version: "5", isOpen: true, recordID: CKRecord.ID(recordName: ""))))
     }
 }
 
