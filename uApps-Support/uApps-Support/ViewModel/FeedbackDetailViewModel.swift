@@ -13,4 +13,8 @@ public class FeedbackDetailViewModel: ObservableObject {
     init(feedback: FeedbackData) {
         self.feedback = feedback
     }
+    
+    func markClosed() {
+        print("Mark Closed")
+    }
 }

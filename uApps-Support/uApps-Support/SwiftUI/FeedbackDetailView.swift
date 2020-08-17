@@ -14,10 +14,16 @@ struct FeedbackDetailView: View {
             Divider()
             VStack {
                 TypeView(feedback: self.viewModel.feedback)
-                TypeOfFeedback()
+                TypeOfFeedback(feedback: self.viewModel.feedback)
                 VStack {
                     SUITextView(text: self.$viewModel.feedback.details).frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }
+                Button(action: {
+                    self.viewModel.markClosed()
+                }) {
+                    Text("Mark Issue As Closed")
+                }
+                
                 
             }.navigationTitle("\(self.viewModel.feedback.bugName)")
         }.padding(.top)
@@ -55,11 +61,12 @@ struct TypeView: View {
 }
 
 struct TypeOfFeedback: View {
+    var feedback: FeedbackData
     var body: some View {
         VStack {
             HStack {
                 Text("Bug Or Crash: ").fontWeight(.bold)
-                Text("Crash")
+                Text(feedback.didCrash ? "Crash": "Bug").foregroundColor(.red)
                 Spacer()
             }
         }.padding([.horizontal, .bottom])
