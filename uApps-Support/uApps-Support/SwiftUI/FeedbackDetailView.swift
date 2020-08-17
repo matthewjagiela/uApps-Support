@@ -10,16 +10,14 @@ import SwiftUI
 struct FeedbackDetailView: View {
     @ObservedObject var viewModel: FeedbackDetailViewModel = FeedbackDetailViewModel(feedback: FeedbackData(bugName: "Test Name", type: "Test Type", didCrash: true, details: "Test Details", emailAddress: "matthew.jagiela", version: "5")) //TODO: Remove =
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack {
-                    NameView(feedback: self.viewModel.feedback)
-                    TypeView(feedback: self.viewModel.feedback)
-                    TypeOfFeedback()
-                    
-                }
-            }
-        }
+        ScrollView {
+            Divider()
+            VStack {
+                TypeView(feedback: self.viewModel.feedback)
+                TypeOfFeedback()
+                
+            }.navigationTitle("\(self.viewModel.feedback.bugName)")
+        }.padding(.top)
     }
 }
 
