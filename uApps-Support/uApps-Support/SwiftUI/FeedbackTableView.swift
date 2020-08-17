@@ -39,7 +39,7 @@ struct FeedbackCell: View {
     
     var body: some View {
         NavigationLink(
-            destination: FeedbackDetailView(),
+            destination: FeedbackDetailView(viewModel: FeedbackDetailViewModel(feedback: feedbackData)),
             label: {
                 VStack {
                     Text(feedbackData.bugName).font(.headline).foregroundColor(Color(UIColor.label)).padding(.bottom, 10)
@@ -50,6 +50,8 @@ struct FeedbackCell: View {
                             Divider().frame(height: 20)
                         } else { EmptyView() }
                         Text(feedbackData.version)
+                        Divider()
+                        Text(feedbackData.isOpen ? "Open": "Closed").foregroundColor(Color(UIColor.label))
                     }
                 }
             })

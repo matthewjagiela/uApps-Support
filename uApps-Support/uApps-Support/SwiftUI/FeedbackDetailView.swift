@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FeedbackDetailView: View {
-    @ObservedObject var viewModel: FeedbackDetailViewModel = FeedbackDetailViewModel(feedback: FeedbackData(bugName: "Test Name", type: "Test Type", didCrash: true, details: "Test Details", emailAddress: "matthew.jagiela", version: "5")) //TODO: Remove =
+    @ObservedObject var viewModel: FeedbackDetailViewModel
     var body: some View {
         ScrollView {
             Divider()
@@ -16,7 +16,7 @@ struct FeedbackDetailView: View {
                 TypeView(feedback: self.viewModel.feedback)
                 TypeOfFeedback(feedback: self.viewModel.feedback)
                 VStack {
-                    SUITextView(text: self.$viewModel.feedback.details).frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    SUITextView(text: self.$viewModel.feedback.details).frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: 100, idealHeight: 500, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }
                 Button(action: {
                     self.viewModel.markClosed()
@@ -32,7 +32,7 @@ struct FeedbackDetailView: View {
 
 struct FeedbackDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedbackDetailView()
+        FeedbackDetailView(viewModel: FeedbackDetailViewModel(feedback: FeedbackData(bugName: "Test Name", type: "Interface", didCrash: true, details: "Details Go Here", emailAddress: "matthew.jagiela", version: "5", isOpen: true)))
     }
 }
 
@@ -81,7 +81,7 @@ struct SUITextView: UIViewRepresentable {
         textView.isUserInteractionEnabled = true
         textView.textAlignment = .center
         textView.backgroundColor = .clear
-        textView.textColor = .black
+        textView.textColor = UIColor.label
         textView.font = UIFont.preferredFont(forTextStyle: .subheadline)
         return textView
     }

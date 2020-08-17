@@ -15,6 +15,7 @@ struct FeedbackData: Hashable {
     var details: String
     var emailAddress: String
     var version: String
+    var isOpen: Bool
     
 }
 
@@ -45,7 +46,8 @@ public class DatabaseReader {
                                               didCrash: (record["crash"] != nil),
                                               details: record["details"] as? String ?? "Not Applicable",
                                               emailAddress: record["email"] as? String ?? "Not Applicable",
-                                              version: record["version"] as? String ?? "Not Applicable")
+                                              version: record["version"] as? String ?? "Not Applicable",
+                                              isOpen: record["open"] != nil)
             newFeedback.append(feedbackAppend)
         }
         operation.queryCompletionBlock = { (cursor, error) in
