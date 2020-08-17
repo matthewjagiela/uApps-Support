@@ -15,6 +15,9 @@ struct FeedbackDetailView: View {
             VStack {
                 TypeView(feedback: self.viewModel.feedback)
                 TypeOfFeedback()
+                VStack {
+                    SUITextView(text: self.$viewModel.feedback.details).frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }
                 
             }.navigationTitle("\(self.viewModel.feedback.bugName)")
         }.padding(.top)
@@ -60,5 +63,22 @@ struct TypeOfFeedback: View {
                 Spacer()
             }
         }.padding([.horizontal, .bottom])
+    }
+}
+
+struct SUITextView: UIViewRepresentable {
+    @Binding var text: String
+    func makeUIView(context: Context) -> UITextView {
+        let textView = UITextView()
+        textView.isSelectable = false
+        textView.isUserInteractionEnabled = true
+        textView.textAlignment = .center
+        textView.backgroundColor = .clear
+        textView.textColor = .black
+        textView.font = UIFont.preferredFont(forTextStyle: .subheadline)
+        return textView
+    }
+    func updateUIView(_ uiView: UITextView, context: Context) {
+        uiView.text = text
     }
 }
