@@ -30,11 +30,11 @@ struct FeedbackDetailView: View {
     }
 }
 
-struct FeedbackDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedbackDetailView(viewModel: FeedbackDetailViewModel(feedback: FeedbackData(bugName: "Test Name", type: "Interface", didCrash: true, details: "Details Go Here", emailAddress: "matthew.jagiela", version: "5", isOpen: true, recordID: CKRecord.ID(recordName: ""))))
-    }
-}
+//struct FeedbackDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FeedbackDetailView(viewModel: FeedbackDetailViewModel(feedback: FeedbackData(bugName: "Test Name", type: "Interface", didCrash: true, details: "Details Go Here", emailAddress: "matthew.jagiela", version: "5", isOpen: true, recordID: CKRecord.ID(recordName: ""))))
+//    }
+//}
 
 struct NameView: View {
     var feedback: FeedbackData
