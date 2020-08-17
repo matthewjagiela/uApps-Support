@@ -44,11 +44,11 @@ public class DatabaseReader {
         operation.recordFetchedBlock = { record in
             let feedbackAppend = FeedbackData(bugName: record["name"] as? String ?? "Not Applicable",
                                               type: record["type"] as? String ?? "Not Applicable",
-                                              didCrash: (record["crash"] != nil),
+                                              didCrash: self.convertBool(record["crash"] as? Int ?? 1),
                                               details: record["details"] as? String ?? "Not Applicable",
                                               emailAddress: record["email"] as? String ?? "Not Applicable",
                                               version: record["version"] as? String ?? "Not Applicable",
-                                              isOpen: record["open"] != nil,
+                                              isOpen: self.convertBool(record["open"] as? Int ?? 1),
                                               recordID: record.recordID)
             newFeedback.append(feedbackAppend)
         }
@@ -106,5 +106,31 @@ public class DatabaseReader {
         let subID = UserDefaults.standard.value(forKey: "subscriptionID") as? CKSubscription.ID
         guard subID != nil else { return false }
         return true
+    }
+    
+    func changeRecordStatus(recordID: CKRecord.ID, closed: Bool){
+        let database = uTimeContainer.publicCloudDatabase
+        database.fetch(withRecordID: recordID) { (record, error) in
+            if error != nil {
+                print("Error closing record \(recordID): \(error) \(recordID.recordName)")
+            } else  {
+                record?.setValue(closed ? 1: 0, forKey: "open")
+                guard let nonNilRecord = record else { return }
+                database.save(nonNilRecord) { (record, error) in
+                    if error != nil {
+                        print("Error updating record: \(error)")
+                    }
+                }
+            }
+        }
+    }
+    
+    func convertBool(_ bool: Int) -> Bool {
+        switch bool {
+        case 0:
+            return true
+        default:
+            return false
+        }
     }
 }
