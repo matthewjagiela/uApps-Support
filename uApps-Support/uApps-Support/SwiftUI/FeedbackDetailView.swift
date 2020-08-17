@@ -15,13 +15,7 @@ struct FeedbackDetailView: View {
                 VStack {
                     NameView(feedback: self.viewModel.feedback)
                     TypeView(feedback: self.viewModel.feedback)
-                    VStack {
-                        HStack {
-                            Text("Bug Or Crash: ").fontWeight(.bold)
-                            Text("Crash")
-                            Spacer()
-                        }
-                    }.padding([.horizontal, .bottom])
+                    TypeOfFeedback()
                     
                 }
             }
@@ -53,6 +47,18 @@ struct TypeView: View {
             HStack {
                 Text("Type: ").font(.title2).fontWeight(.bold)
                 Text(feedback.type).padding(.top, 2.5)
+                Spacer()
+            }
+        }.padding([.horizontal, .bottom])
+    }
+}
+
+struct TypeOfFeedback: View {
+    var body: some View {
+        VStack {
+            HStack {
+                Text("Bug Or Crash: ").fontWeight(.bold)
+                Text("Crash")
                 Spacer()
             }
         }.padding([.horizontal, .bottom])
