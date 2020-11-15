@@ -55,11 +55,11 @@
 		2E0DB31924E6259200AA5115 /* uApps-SupportUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "uApps-SupportUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E0DB31D24E6259200AA5115 /* uApps_SupportUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uApps_SupportUITests.swift; sourceTree = "<group>"; };
 		2E0DB31F24E6259200AA5115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2E0DB32B24E625A100AA5115 /* uApps-Support.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "uApps-Support.entitlements"; sourceTree = "<group>"; };
 		2E0DB32C24E626CF00AA5115 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E0DB33224E628F500AA5115 /* DatabaseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
 		2E0DB33524E6291200AA5115 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		2E42899824E9F6910078C211 /* FeedbackDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackDetailViewModel.swift; sourceTree = "<group>"; };
+		2E6E5C8E2561BC0C00ED5571 /* uApps-Support.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "uApps-Support.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +113,7 @@
 		2E0DB2FF24E6259100AA5115 /* uApps-Support */ = {
 			isa = PBXGroup;
 			children = (
+				2E6E5C8E2561BC0C00ED5571 /* uApps-Support.entitlements */,
 				2E0DB33124E6287500AA5115 /* ViewModel */,
 				2E0DB33024E6287000AA5115 /* Handler */,
 				2E0DB32F24E6286600AA5115 /* Other */,
@@ -161,7 +162,6 @@
 		2E0DB32F24E6286600AA5115 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				2E0DB32B24E625A100AA5115 /* uApps-Support.entitlements */,
 				2E0DB30924E6259200AA5115 /* Info.plist */,
 				2E0DB30424E6259200AA5115 /* Assets.xcassets */,
 				2E0DB32C24E626CF00AA5115 /* AppDelegate.swift */,
