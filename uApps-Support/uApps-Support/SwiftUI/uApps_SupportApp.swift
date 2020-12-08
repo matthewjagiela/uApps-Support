@@ -12,13 +12,7 @@ struct uApps_SupportApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FeedbackTableView()
         }
-    }
-}
-
-struct uApps_SupportApp_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
